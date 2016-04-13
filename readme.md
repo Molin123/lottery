@@ -24,7 +24,7 @@
 		  cycle:20,	//转动基本次数：即至少需要转动多少次再进入抽奖环节
 		  num:6,    //最后停下的位置
 		  在实际开发中可能只需要从后台取到抽奖结果，然后赋值给lottery.num即可。
-		5.为防止用户多次点击抽奖，有一个click参数，默认为false，可以向下面这样使用
+		5.为防止用户多次点击抽奖，有一个click参数，默认为false，可以像下面这样使用
 			$("#lottery a").click(function(){
 				if (click) {
 					return false;
