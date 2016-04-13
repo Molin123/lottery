@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="MobileOptimized" content="320"/>
+    <link rel="apple-touch-icon-precomposed" href="" >
+    <title>9宫格抽奖</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+</head>
+
+<body>
+    
+<style type="text/css">
+	#lottery{padding:10px;background-color: #FEA6B2;}
+	#lottery table{width: 100%;}
+	#lottery table img{width: 100%;display: block;}
+	#lottery table .lottery-unit{border:1px solid #FEA6B2;overflow: hidden;background-color: #fff;}
+	#lottery table .lottery-unit.active{background-color: #FA598F;}
+</style>
+
+	<div id="lottery">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="lottery-unit lottery-unit-0"><img src="./images/l_01.png"></td>
+				<td class="lottery-unit lottery-unit-1"><img src="./images/l_02.png"></td>
+				<td class="lottery-unit lottery-unit-2"><img src="./images/l_03.png"></td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-7"><img src="./images/l_04.png"></td>
+				<td><a href="javascript:void(0)"><img src="./images/l_09.png"></a></td>
+				<td class="lottery-unit lottery-unit-3"><img src="./images/l_05.png"></td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-6"><img src="./images/l_06.png"></td>
+				<td class="lottery-unit lottery-unit-5"><img src="./images/l_07.png"></td>
+	      <td class="lottery-unit lottery-unit-4"><img src="./images/l_04.png"></td>
+			</tr>
+		</table>
+	</div>
+<script src="./js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="./js/lottery2.js"></script>
+<script type="text/javascript">
+//显示中奖结果 这个函数需要自定义，默认没有
+function lotteryStop(index){
+	//index就是lottery.num
+	switch(index){
+		case 4:
+			alert("谢谢参与！");
+			break;
+		case 7:
+			alert("谢谢参与！");
+			break;
+		case 6:
+			alert("恭喜您抽中了50元优惠券！");
+			break;
+		case 0:
+			alert("恭喜您抽中了150元优惠券！");
+			break;
+		case 1:
+			alert("恭喜您抽中了OPPO R9！");
+			break;	
+		case 2:
+			alert("恭喜您抽中了100元优惠券！");
+			break;
+		case 3:
+			alert("恭喜您抽中了U盘！");
+			break;
+		case 5:
+			alert('恭喜您抽中了爱米优移动电源！');
+			break;
+		default:
+			alert("当前抽奖人数过多，请稍后尝试！");
+
+	}
+}
+window.onload=function(){
+	lottery.init('lottery');
+	$("#lottery a").click(function(){
+		if (click) {
+			return false;
+		}else{
+			click=true;
+			lottery.speed=100;
+			lottery.num=1;//最后停的位置
+			roll();
+			return false;
+		}
+	});
+};
+</script>
+</body>
+</html>
