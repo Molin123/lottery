@@ -44,7 +44,7 @@ function roll(num){
 		//console.log(lottery.index);
 		try {
 			if(typeof(eval(lotteryStop)) == "function"){
-				lotteryStop(lottery.index);
+				setTimeout("lotteryStop(lottery.index)",100);
 			}
 		} catch(e) {}
 		lottery.prize=-1;
